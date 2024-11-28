@@ -9,7 +9,8 @@ class PuestoPersonalController extends Controller
 {
     public function index()
     {
-        $puestos = PuestoPersonal::all();
+        // Cambia esto si deseas mostrar más o menos registros por página
+        $puestos = PuestoPersonal::paginate(10);
         return view('puestos.index', compact('puestos'));
     }
 
